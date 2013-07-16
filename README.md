@@ -2,7 +2,11 @@
 
 A bit of an experiment...
 
+We're animating the movement of Honolulu's TheBus system, in the browser.
+
 ### What is this?
+
+Here's a taste of [~7 minutes compressed to 45 seconds on Vimeo](http://vimeo.com/70266760).
 
 This is a simple web app which combines:
 
