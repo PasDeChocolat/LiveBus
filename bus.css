@@ -3,6 +3,24 @@ body {
   background-color: black;
 }
 
+.info {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: white;
+  margin-left: 5px;
+  margin-top: 8px;
+}
+
+.info a:link,
+.info a:visited,
+.info a:active {
+  color: grey;
+}
+
+.info a:hover {
+  color: steelblue;
+}
+
 .path_defaults {
   fill: black;
   fill-opacity: 0;

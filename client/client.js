@@ -55,18 +55,15 @@ Template.map.rendered = function () {
     .translate([width / 2, height / 2]);
 
   Deps.autorun(function () {
-    console.log('Refreshing data...');
     var vehicles = Vehicles.find().fetch();
 
     var movedVehicles = _.filter(vehicles, hasMoved);
     var movedVehiclesCount = parseFloat(movedVehicles.length);
-    console.log('movedVehiclesCount: ' + movedVehiclesCount);
     function moveDelay(d) {
       if (!hasMoved(d)) return 0;
       var count = _.max([1, movedVehiclesCount]);
       var index = _.max([0, _.indexOf(movedVehicles, d)]);
       var delay = (30000.0 / count) * index; 
-      console.log('delay: ' + delay)
       return delay; 
     }
 

@@ -1,17 +1,3 @@
-var path = Npm.require('path');
-var fs = Npm.require('fs');
-var base = path.resolve('.');
-var isBundle = fs.existsSync(base + '/bundle');
-var modulePath = base + (isBundle ? '/bundle/static' : '/public') + '/node_modules';
-ProtoBuf = Npm.require(modulePath + '/protobufjs'); // NOTE, this is going to be a global variable
-var builder = ProtoBuf.protoFromFile(base + "/public/data/gtfs-realtime.proto");
-if (_U.existy(builder)) {
-  console.log("builer ->");
-  console.log(builder);
-} else {
-  console.log("no builder!");
-}
-
 var http = Npm.require('http');
 var Fiber = Npm.require('fibers');
 var GTFS_VEHICLE_BATCH_SIZE = 500;
@@ -39,7 +25,7 @@ function gtfsRecorder() {
 }
 
 var recorder = gtfsRecorder();
-function pollGTFS() {
+function pollGTFS(builder) {
   var options = {
     hostname: 'webapps.thebus.org',
     port: 80,
@@ -83,9 +69,25 @@ function pollGTFS() {
 }
 
 Meteor.startup(function () {
-  pollGTFS();
+  var path = Npm.require('path');
+  var fs = Npm.require('fs');
+  var base = path.resolve('.');
+  var isBundle = fs.existsSync(base + '/bundle');
+  var modulePath = base + (isBundle ? '/bundle/static' : '/public') + '/node_modules';
+  ProtoBuf = Npm.require(modulePath + '/protobufjs'); // NOTE, this is going to be a global variable
+
+  var protoPath = base + (isBundle ? '/bundle/static' : '/public') + '/data';
+  var builder = ProtoBuf.protoFromFile(protoPath + "/gtfs-realtime.proto");
+  if (_U.existy(builder)) {
+    console.log("builder ->");
+    console.log(builder);
+  } else {
+    console.log("no builder!");
+  }
+
+  pollGTFS(builder);
   setInterval(function(){
-    pollGTFS();
+    pollGTFS(builder);
   }, GTFS_VEHICLE_POLL_SECONDS*1000);
 });
 
