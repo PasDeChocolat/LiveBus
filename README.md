@@ -34,6 +34,15 @@ Of course, you'll also have to use a different map. I've written a bit about how
 
 * This is not using TheBus' older HEA API. It favors the GTFS-realtime feed, as this is the direction we seem to be going in for future services.
 
+## Installation/Running
+
+* Install [node.js](http://nodejs.org/)
+* Install [Meteor](http://meteor.com)
+** curl https://install.meteor.com | sh
+* Run app
+** cd LiveBus
+** meteor
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
