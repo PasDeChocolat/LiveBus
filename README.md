@@ -4,6 +4,8 @@ A bit of an experiment...
 
 We're animating the movement of Honolulu's TheBus system, in the browser.
 
+See the [tutorial](http://pasdechocolat.com/2013/07/20/livebus-with-meteor-and-d3/) for more detailed description of how this works. There's also a live version courtesy of Meteor at [http://livebus.meteor.com](http://livebus.meteor.com).
+
 ### What is this?
 
 Here's a taste of [~7 minutes compressed to 45 seconds on Vimeo](http://vimeo.com/70266760).
@@ -76,7 +78,7 @@ Open a browser and point it to `http://localhost:3000/`
 
 ## Notes
 
-* This is not using TheBus' older HEA API. It favors the GTFS-realtime feed, as this is the direction we seem to be going in for future services.
+This is not using TheBus' older HEA API. It favors the GTFS-realtime feed, as this is the direction we seem to be going in for future services.
 
 ## License
 
