@@ -22,7 +22,7 @@ D3 handles moving the dots on the map, since it ties data to SVG elements and an
 
 In this way, I write very little code. It's fairly declarative in nature. Et, voilà ! Realtime bus map.
 
-## How do I use this?
+## What is this for?
 
 I don't know.
 
@@ -30,18 +30,53 @@ It kind of depends. This implementation is fairly specific to TheBus. But, that 
 
 Of course, you'll also have to use a different map. I've written a bit about how to create these maps in D3 before. [My write-up](http://pasdechocolat.com/2013/05/03/mapping-hawaii/) is just an extension of the formal [D3 write-up by Mike Bostock](http://bost.ocks.org/mike/map/), but mine's tailored to Hawai‘i.
 
+## How do I install and run this?
+
+### For Mac OS X
+
+#### Prerequisites
+
+* Homebrew
+* Git
+
+#### Do this:
+
+Install [node.js](http://nodejs.org/)
+
+```bash
+$ brew install node
+```
+
+Make sure it's on your path:
+
+```bash
+export PATH="/usr/local/share/npm/bin:$PATH"
+```
+
+Install [Meteor](http://meteor.com)
+
+```bash
+$ curl https://install.meteor.com | /bin/sh
+```
+
+Grab LiveBus
+
+```bash
+$ git clone https://github.com/PasDeChocolat/LiveBus.git
+```
+
+Run app
+
+```bash
+$ cd LiveBus
+$ meteor
+```
+
+Open a browser and point it to `http://localhost:3000/`
+
 ## Notes
 
 * This is not using TheBus' older HEA API. It favors the GTFS-realtime feed, as this is the direction we seem to be going in for future services.
-
-## Installation/Running
-
-* Install [node.js](http://nodejs.org/)
-* Install [Meteor](http://meteor.com)
-** curl https://install.meteor.com | sh
-* Run app
-** cd LiveBus
-** meteor
 
 ## License
 
