@@ -74,10 +74,9 @@ Meteor.startup(function () {
   var base = path.resolve('.');
   var isBundle = fs.existsSync(base + '/bundle');
   var modulePath = base + (isBundle ? '/bundle/static' : '/public') + '/node_modules';
-  var ProtoBuf = Npm.require(modulePath + '/protobufjs'); // NOTE, this is going to be a global variable
-
-  var protoPath = base + (isBundle ? '/bundle/static' : '/public') + '/data';
-  var builder = ProtoBuf.protoFromFile(protoPath + "/gtfs-realtime.proto");
+  var ProtoBuf = Meteor.require('protobufjs');
+  var protoPath = "../client/app/data/gtfs-realtime.proto";
+  var builder = ProtoBuf.protoFromFile(protoPath);
   if (_U.existy(builder)) {
     console.log("builder ->");
     console.log(builder);
