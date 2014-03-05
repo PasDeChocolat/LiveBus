@@ -69,11 +69,6 @@ function pollGTFS(builder) {
 }
 
 Meteor.startup(function () {
-  var path = Npm.require('path');
-  var fs = Npm.require('fs');
-  var base = path.resolve('.');
-  var isBundle = fs.existsSync(base + '/bundle');
-  var modulePath = base + (isBundle ? '/bundle/static' : '/public') + '/node_modules';
   var ProtoBuf = Meteor.require('protobufjs');
   var protoPath = "../client/app/data/gtfs-realtime.proto";
   var builder = ProtoBuf.protoFromFile(protoPath);
